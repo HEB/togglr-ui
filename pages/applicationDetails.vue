@@ -14,7 +14,7 @@
           <v-card flat :color="darkThemeEnabled ? 'darkBackground' : 'lightGrey'" class="mb-4 pa-2">
             <span class="text-xs-left">{{ appDetails.payload.id }}</span>
             <span class="float-right mr-1" @click="copyToClipboard(appDetails.payload.id)">
-              <v-icon>file_copy</v-icon>
+              <v-icon class="copy-icon">file_copy</v-icon>
             </span>
           </v-card>
 
@@ -446,5 +446,14 @@ export default {
 <style lang='scss' scoped>
 .buffer {
   height: 40px;
+}
+.copy-icon{
+  -webkit-user-select: none; /* Chrome/Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+  -khtml-user-select: none; /* webkit (konqueror) browsers */
+  /* Rules below not implemented in browsers yet */
+  -o-user-select: none;
+  user-select: none;
 }
 </style>
